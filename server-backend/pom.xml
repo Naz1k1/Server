@@ -26,6 +26,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.7.18</spring-boot.version>
         <!-- 数据库相关 -->
+        <mysql.version>8.0.33</mysql.version>
         <mybatis-flex.version>1.10.9</mybatis-flex.version>
         <druid.version>1.2.20</druid.version>
 
@@ -39,13 +40,22 @@
         <oshi.version>6.4.8</oshi.version>
         <influxdb-client.version>6.11.0</influxdb-client.version>
 
-        <!-- 安全相关 -->
-        <jjwt.version>0.11.5</jjwt.version>
+<!--        &lt;!&ndash; 安全相关 &ndash;&gt;-->
+<!--        <jjwt.version>0.11.5</jjwt.version>-->
+
+<!--        &lt;!&ndash; 接口文档 &ndash;&gt;-->
+<!--        <knife4j.version>4.3.0</knife4j.version>-->
     </properties>
 
     <!-- 依赖版本管理 -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.mybatis-flex</groupId>
                 <artifactId>mybatis-flex-dependencies</artifactId>
@@ -92,23 +102,6 @@
                 <groupId>com.influxdb</groupId>
                 <artifactId>influxdb-client-java</artifactId>
                 <version>${influxdb-client.version}</version>
-            </dependency>
-
-            <!-- JWT相关依赖 -->
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-api</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-impl</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-jackson</artifactId>
-                <version>${jjwt.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
